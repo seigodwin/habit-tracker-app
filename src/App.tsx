@@ -4,7 +4,7 @@ import { HabitForm } from "./Components/HabitForm"
 import { HabitList, type Habit } from "./Components/HabitList"
 import { Header } from "./Components/Header"
 
-export default function(){
+function App(){
   const [habits , setHabits] = useState<Habit[]>([]);
 
   function addHabit(name: string){
@@ -24,3 +24,5 @@ export default function(){
     </div>
   )
 }
+
+export default App;
