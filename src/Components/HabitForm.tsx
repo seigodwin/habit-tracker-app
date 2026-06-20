@@ -3,6 +3,7 @@ import { Button } from "./Button";
 
 type HabitFormProps = {
     addHabit(name: string) : void
+   
 }
 
 export function HabitForm({addHabit}: HabitFormProps){
