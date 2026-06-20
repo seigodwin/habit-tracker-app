@@ -1,9 +1,20 @@
 import { eachDayOfInterval, endOfWeek, format, startOfWeek } from "date-fns";
 import { Button } from "./Button";
 
-export function HabitList(){
-    const habits: Habit[] = [{id: "a" , name:"Read"}];
+export type Habit = {
+    id: string;
+    name: string;
+};
 
+type HabitListProps = {
+    habits: Habit[];
+};
+
+type HabitItemProps = {
+    habit: Habit
+}
+
+export function HabitList({habits}: HabitListProps){
     if(habits.length === 0){
         return <p className="text-center text-zinc-500 py-12">
             No habits yet. Add one to get started</p>
@@ -16,14 +27,7 @@ export function HabitList(){
     </div>
 }
 
-type Habit = {
-    id: string;
-    name: string;
-};
 
-type HabitItemProps = {
-    habit: Habit;
-};
 
 const visibleDates = eachDayOfInterval({start: startOfWeek(new Date() , {weekStartsOn: 1}) , end: endOfWeek(new Date() , {weekStartsOn: 1})})
 
